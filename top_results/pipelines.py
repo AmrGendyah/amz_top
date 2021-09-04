@@ -6,8 +6,25 @@
 
 # useful for handling different item types with a single interface
 from itemadapter import ItemAdapter
-
+import logging
+import pymongo 
 
 class TopResultsPipeline:
+
+    mongourl = "mongodb+srv://amr:amramr@cluster0.iup4q.mongodb.net/IMDB_DB?retryWrites=true&w=majority"
+    
+    def open_spider(self, spider):
+        logging.warning("SPIDER OPENED PIPELINE")
+        self.client = pymongo.MongoClient(self.mongourl)
+        self.db = self.client['amz_top']
+        
+
+    def close_spider(self, spider):
+        logging.warning("SPIDER CLOSED PIPELINE")
+        self.client.close()
+
+
     def process_item(self, item, spider):
+        logging.warning("SPIDER itemPIPELINE")
+        self.db[spider.settings.get('COLLECTION_NAME')].insert(item)
         return item
