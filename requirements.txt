@@ -5,3 +5,4 @@ scrapingant-client==0.3.4
 shub==2.13.0
 pandas==1.2.3
 pymongo==3.11.3
+dnspython==2.1.0
