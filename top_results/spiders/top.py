@@ -93,9 +93,9 @@ class TopSpider(scrapy.Spider):
             if name :
                 yield{
                     'keyword': response.meta['kywrd'],
-                    'product_name' : name,
-                    'price': price,
-                    'stock': stock,
+                    'product_name' : str(name),
+                    'price': str(price),
+                    'stock': str(stock),
                     'amazon_link': pro_link
                 }
 
