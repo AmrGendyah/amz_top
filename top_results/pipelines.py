@@ -9,7 +9,7 @@ from itemadapter import ItemAdapter
 import logging
 import pymongo 
 
-class TopResultsPipeline:
+class MongodbPipline:
 
     mongourl = "mongodb+srv://amr:amramr@cluster0.iup4q.mongodb.net/IMDB_DB?retryWrites=true&w=majority"
     
