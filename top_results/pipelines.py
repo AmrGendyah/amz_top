@@ -11,7 +11,7 @@ import pymongo
 
 class MongodbPipline:
 
-    mongourl = "mongodb+srv://amr:amramr@cluster0.iup4q.mongodb.net/IMDB_DB?retryWrites=true&w=majority"
+    mongourl = "mongodb+srv://amr:amramr@cluster0.iup4q.mongodb.net/myFirstDatabase?retryWrites=true&w=majority"
     
     def open_spider(self, spider):
         logging.warning("SPIDER OPENED PIPELINE")
